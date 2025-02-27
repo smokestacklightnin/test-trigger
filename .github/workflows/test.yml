@@ -1,0 +1,16 @@
+name: Test triggers
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - run: |
+          echo ref_name ${{ github.ref_name }}
+          echo ref ${{ github.ref }}
+          echo head_ref ${{ github.head_ref }}
+          echo workflow_ref ${{ github.workflow_ref }}
